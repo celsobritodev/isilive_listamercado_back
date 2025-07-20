@@ -106,5 +106,6 @@ concluir a lista como sendo completa e gerar seu custo total a partir dos itens 
 
 Entrada esperada
   - numero da lista
+    
 Saída esperada
   - Objeto Lista contendo todos os seus atributos e com o valor total correspondente à somatória dos itens
