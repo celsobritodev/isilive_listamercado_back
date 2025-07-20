@@ -100,6 +100,7 @@ Entrada esperada
 
 Saída esperada
   - nenhum
+    
 ### fechamento da lista
 concluir a lista como sendo completa e gerar seu custo total a partir dos itens comprados
 
