@@ -15,6 +15,7 @@ import jakarta.persistence.Table;
 @Table(name="tbl_produto")
 public class Produto {
 	@Id
+	@Column(name = "id_produto")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
