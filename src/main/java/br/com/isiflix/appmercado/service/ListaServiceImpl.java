@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import br.com.isiflix.appmercado.model.ItemLista;
 import br.com.isiflix.appmercado.model.Lista;
 import br.com.isiflix.appmercado.repo.ListaRepo;
@@ -36,7 +35,8 @@ public class ListaServiceImpl implements IListaService {
 		Lista l = repo.findById(id).get();
 		double total = 0.0;
 		for (ItemLista item: l.getItens()) {
-			total += l.getValorTotal();
+			//total +=l.getValorTotal(); // troquei pela de baixo; sera q funciona?
+			total+=item.getLista().getValorTotal();
 		}
 		l.setValorTotal(total);
 		l.setStatus(1);

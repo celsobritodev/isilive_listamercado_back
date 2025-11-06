@@ -13,6 +13,7 @@ import br.com.isiflix.appmercado.model.ItemLista;
 import br.com.isiflix.appmercado.service.IItemListaService;
 
 @RestController
+//@CrossOrigin("*")
 public class ItemListaController {
 	
 	

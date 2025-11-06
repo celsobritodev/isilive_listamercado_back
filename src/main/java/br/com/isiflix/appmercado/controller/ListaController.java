@@ -16,6 +16,7 @@ import br.com.isiflix.appmercado.model.Lista;
 import br.com.isiflix.appmercado.service.IListaService;
 
 @RestController
+//@CrossOrigin("*")
 public class ListaController {
 	
 	@Autowired
@@ -27,7 +28,7 @@ public class ListaController {
     	return ResponseEntity.ok(service.buscarTodas());
     }
 	
-	@GetMapping("/listas/{id}")
+	@GetMapping("/lista/{id}")
 	public ResponseEntity<Lista> buscarPeloId(@PathVariable Integer id) {
 		Lista res = service.buscarPeloId(id);
 		if (res!= null) {
