@@ -32,10 +32,12 @@ public class Lista {
 	@Column(name="status")
 	private Integer status;
 	
+	
+    // Uma Lista pode ter muitos ItemLista
+    // mappedBy="lista": Indica que o relacionamento é bidirecional e o lado dono é o ItemLista
+    // cascade = CascadeType.ALL: Operações na Lista afetam os Itens automaticamente
 	@OneToMany(mappedBy="lista", cascade = CascadeType.ALL)
 	private List<ItemLista> itens;
-	
-	
 	
 	
 	public Integer getId() {

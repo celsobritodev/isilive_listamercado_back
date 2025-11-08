@@ -17,7 +17,6 @@ public class ProdutoServiceImpl implements IProdutoService {
 	
 	@Override
 	public Produto criarNovoProduto(Produto prod) {
-		// TODO Auto-generated method stub
 		if (prod.getNome()==null || prod.getNome().length()==0) {
 			return null;
 		}
@@ -28,19 +27,19 @@ public class ProdutoServiceImpl implements IProdutoService {
 	
 	@Override
 	public List<Produto> listarTodos() {
-		// TODO Auto-generated method stub
+	
 		return (List<Produto>) repo.findAll();
 	}
 
 	@Override
 	public List<Produto> buscarPorPalavraChave(String key) {
-		// TODO Auto-generated method stub
+
 		return repo.findAllByNomeContaining(key);
 	}
 
 	@Override
 	public Produto buscarPorId(Integer id) {
-		// TODO Auto-generated method stub
+
 		return repo.findById(id).orElse(null);
 	}
 

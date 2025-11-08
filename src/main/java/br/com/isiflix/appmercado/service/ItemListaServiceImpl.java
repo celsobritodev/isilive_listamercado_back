@@ -1,6 +1,5 @@
 package br.com.isiflix.appmercado.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import br.com.isiflix.appmercado.model.ItemLista;
@@ -9,25 +8,32 @@ import br.com.isiflix.appmercado.repo.ItemListaRepo;
 @Component
 public class ItemListaServiceImpl implements IItemListaService{
 
-	@Autowired
-	private ItemListaRepo repo;
+	//@Autowired
+	//private ItemListaRepo repo;
+	
+    private final ItemListaRepo repo;
+	
+	// Injeção via construtor
+	public ItemListaServiceImpl(ItemListaRepo repo) {
+		this.repo = repo;
+	}
 	
 	
 	@Override
 	public ItemLista inserirItem(ItemLista novo) {
-		// TODO Auto-generated method stub
-		return repo.save(novo);
+	
+		return repo.save(novo); // sem chave primaria, o save é um insert
 	}
 
 	@Override
 	public ItemLista alterarItem(ItemLista item) {
-		// TODO Auto-generated method stub
-		return repo.save(item);
+
+		return repo.save(item); // com chave primaria o save entende que é um update
 	}
 
 	@Override
 	public void removerItem(Integer numSeq) {
-		// TODO Auto-generated method stub
+
 		repo.deleteById(numSeq);
 	}
 

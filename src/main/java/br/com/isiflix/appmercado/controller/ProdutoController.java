@@ -2,7 +2,6 @@ package br.com.isiflix.appmercado.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,8 +17,16 @@ import br.com.isiflix.appmercado.service.IProdutoService;
 //@CrossOrigin("*")
 public class ProdutoController {
 	
-	@Autowired
-	private IProdutoService service;
+	//@Autowired
+	//private IProdutoService service;
+	
+    private final IProdutoService service;
+	
+	// Injeção via construtor
+	public ProdutoController(IProdutoService service) {
+		this.service = service;
+	}
+	
 	
 	@PostMapping("/produtos")
 	public ResponseEntity<Produto> cadastrarNovo(@RequestBody Produto novo){

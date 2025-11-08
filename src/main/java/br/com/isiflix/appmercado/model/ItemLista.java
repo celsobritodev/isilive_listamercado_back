@@ -27,10 +27,17 @@ public class ItemLista {
 	@Column(name="concluido")
 	private Integer concluido;
 	
+    // Muitos ItemLista podem estar associados a um Produto
+    // Chave estrangeira: tbl_produto_id_produto
+    // Exemplo: O produto "Arroz" pode aparecer em vários itens de lista
 	@ManyToOne
 	@JoinColumn(name="tbl_produto_id_produto")
 	private Produto produto;
 	
+	
+    // Muitos ItemLista podem pertencer a uma Lista
+    // Chave estrangeira: tbl_lista_id_lista
+    // Exemplo: Uma lista de compras pode ter vários itens
 	@ManyToOne
 	@JoinColumn(name="tbl_lista_id_lista")
 	private Lista lista;

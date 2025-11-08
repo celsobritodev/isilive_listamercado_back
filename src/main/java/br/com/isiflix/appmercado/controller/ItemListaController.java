@@ -1,6 +1,5 @@
 package br.com.isiflix.appmercado.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,8 +16,17 @@ import br.com.isiflix.appmercado.service.IItemListaService;
 public class ItemListaController {
 	
 	
-	@Autowired
-	private IItemListaService service;
+	//@Autowired
+	//private IItemListaService service;
+	
+    private final IItemListaService service;
+	
+	// Injeção via construtor
+	public ItemListaController(IItemListaService service) {
+		this.service = service;
+	}
+	
+	
 	
 	@PostMapping("/itemlista")
 	public ResponseEntity<ItemLista> inserir(@RequestBody ItemLista novo) {

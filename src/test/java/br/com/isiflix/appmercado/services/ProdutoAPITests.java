@@ -14,7 +14,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 public class ProdutoAPITests {
 	
 	@Autowired
-	private MockMvc mvc;
+	private MockMvc mvc; // trabalha como se fosse um postman fake
 	
 	@Test
 	public void deveriaRetornarProdutoPorId() throws Exception {

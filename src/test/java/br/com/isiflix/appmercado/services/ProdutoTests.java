@@ -24,9 +24,12 @@ import br.com.isiflix.appmercado.service.ProdutoServiceImpl;
 @ActiveProfiles("test")
 public class ProdutoTests {
 	
+	// vai chamar o repositorio "mockado" ( chamar o repositorio fake )
+	// vai indicar que service vai usar uma classe mockada
 	@InjectMocks
 	private ProdutoServiceImpl service;
 	
+	// sera simulado
 	@Mock
 	private ProdutoRepo repo;
 	

@@ -2,7 +2,6 @@ package br.com.isiflix.appmercado.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,8 +18,15 @@ import br.com.isiflix.appmercado.service.IListaService;
 //@CrossOrigin("*")
 public class ListaController {
 	
-	@Autowired
-	private IListaService service;
+	//@Autowired
+	//private IListaService service;
+	
+    private final IListaService service;
+	
+	// Injeção via construtor
+	public ListaController(IListaService service) {
+		this.service = service;
+	}
 	
 
     @GetMapping("/listas")
