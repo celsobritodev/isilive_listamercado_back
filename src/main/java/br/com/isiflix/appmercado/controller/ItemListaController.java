@@ -27,7 +27,7 @@ public class ItemListaController {
 	}
 	
 	
-	
+	// inserir um item em uma lista de itens
 	@PostMapping("/itemlista")
 	public ResponseEntity<ItemLista> inserir(@RequestBody ItemLista novo) {
 		ItemLista res = service.inserirItem(novo);
@@ -38,6 +38,7 @@ public class ItemListaController {
 	}
 	
 	
+	// alterar um item em uma lista de itens
 	@PutMapping("/itemlista/{numSeq}")
 	public ResponseEntity<ItemLista> alterar(@RequestBody ItemLista item, @PathVariable Integer numSeq) {
 		item.setNumSeq(numSeq);
@@ -48,7 +49,7 @@ public class ItemListaController {
 		return ResponseEntity.badRequest().build();
 	}
 	
-	
+	// remove um item de uma lista de itens
 	@DeleteMapping("/itemlista/{numSeq}")
 	public ResponseEntity<?> apagar(@PathVariable Integer numSeq) {
 		service.removerItem(numSeq);

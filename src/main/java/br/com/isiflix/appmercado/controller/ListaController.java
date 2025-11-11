@@ -34,7 +34,7 @@ public class ListaController {
     	return ResponseEntity.ok(service.buscarTodas());
     }
 	
-	@GetMapping("/lista/{id}")
+	@GetMapping("/listas/{id}")
 	public ResponseEntity<Lista> buscarPeloId(@PathVariable Integer id) {
 		Lista res = service.buscarPeloId(id);
 		if (res!= null) {
@@ -44,7 +44,7 @@ public class ListaController {
 	}
 	
 	
-	@PostMapping("/lista")
+	@PostMapping("/listas")
 	public ResponseEntity<Lista> adicionarNova(@RequestBody Lista nova) {
 		Lista res = service.criarNovaLista(nova);
 		if (res!=null) {
