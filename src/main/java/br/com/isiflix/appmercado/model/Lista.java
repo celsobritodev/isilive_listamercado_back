@@ -3,6 +3,8 @@ package br.com.isiflix.appmercado.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -37,6 +39,7 @@ public class Lista {
     // mappedBy="lista": Indica que o relacionamento é bidirecional e o lado dono é o ItemLista
     // cascade = CascadeType.ALL: Operações na Lista afetam os Itens automaticamente
 	@OneToMany(mappedBy="lista", cascade = CascadeType.ALL)
+	@JsonManagedReference // Lado "gerenciado"
 	private List<ItemLista> itens;
 	
 	

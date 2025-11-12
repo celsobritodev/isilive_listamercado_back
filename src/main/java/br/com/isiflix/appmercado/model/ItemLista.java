@@ -1,5 +1,7 @@
 package br.com.isiflix.appmercado.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -40,6 +42,7 @@ public class ItemLista {
     // Exemplo: Uma lista de compras pode ter vários itens
 	@ManyToOne
 	@JoinColumn(name="tbl_lista_id_lista")
+	@JsonBackReference // Lado "volta da referência"
 	private Lista lista;
 
 	public Integer getNumSeq() {
