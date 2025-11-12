@@ -42,6 +42,7 @@ public class ItemLista {
     // Exemplo: Uma lista de compras pode ter vários itens
 	@ManyToOne
 	@JoinColumn(name="tbl_lista_id_lista")
+	//@JsonBackReference: Lado "passivo" da relação (NÃO será serializado)
 	@JsonBackReference // Lado "volta da referência"
 	private Lista lista;
 

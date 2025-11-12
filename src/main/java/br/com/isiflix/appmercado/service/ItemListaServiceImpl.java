@@ -1,5 +1,7 @@
 package br.com.isiflix.appmercado.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import br.com.isiflix.appmercado.model.ItemLista;
@@ -12,6 +14,13 @@ public class ItemListaServiceImpl implements IItemListaService{
 	//private ItemListaRepo repo;
 	
     private final ItemListaRepo repo;
+    
+ // 👈 IMPLEMENTE ESTE MÉTODO
+    @Override
+    public List<ItemLista> recuperarPorLista(Integer idLista) {
+        return repo.findByListaId(idLista);
+    }
+    
 	
 	// Injeção via construtor
 	public ItemListaServiceImpl(ItemListaRepo repo) {

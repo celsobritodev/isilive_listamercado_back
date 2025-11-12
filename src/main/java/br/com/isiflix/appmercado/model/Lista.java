@@ -39,6 +39,7 @@ public class Lista {
     // mappedBy="lista": Indica que o relacionamento é bidirecional e o lado dono é o ItemLista
     // cascade = CascadeType.ALL: Operações na Lista afetam os Itens automaticamente
 	@OneToMany(mappedBy="lista", cascade = CascadeType.ALL)
+	//@JsonManagedReference: Lado "ativo" da relação (será serializado)
 	@JsonManagedReference // Lado "gerenciado"
 	private List<ItemLista> itens;
 	

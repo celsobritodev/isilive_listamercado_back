@@ -1,7 +1,10 @@
 package br.com.isiflix.appmercado.controller;
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -25,6 +28,18 @@ public class ItemListaController {
 	public ItemListaController(IItemListaService service) {
 		this.service = service;
 	}
+	
+	// 👈 **ADICIONE ESTE NOVO ENDPOINT**
+    @GetMapping("/itemlista/lista/{idLista}")
+    public ResponseEntity<List<ItemLista>> recuperarPorLista(@PathVariable Integer idLista) {
+        List<ItemLista> itens = service.recuperarPorLista(idLista);
+        if (itens != null && !itens.isEmpty()) {
+            return ResponseEntity.ok(itens);
+        }
+        return ResponseEntity.noContent().build();
+    }
+    
+	
 	
 	
 	// inserir um item em uma lista de itens
