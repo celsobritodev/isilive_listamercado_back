@@ -16,27 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tbl_produto`
+-- Table structure for table `tbl_lista`
 --
 
-DROP TABLE IF EXISTS `tbl_produto`;
+DROP TABLE IF EXISTS `tbl_lista`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tbl_produto` (
-  `id_produto` int NOT NULL AUTO_INCREMENT,
-  `nome_produto` varchar(70) NOT NULL,
-  PRIMARY KEY (`id_produto`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3;
+CREATE TABLE `tbl_lista` (
+  `id_lista` int NOT NULL AUTO_INCREMENT,
+  `data_criacao` date NOT NULL,
+  `nome_mercado` varchar(50) DEFAULT NULL,
+  `valor_total` double DEFAULT NULL,
+  `status` int DEFAULT NULL,
+  PRIMARY KEY (`id_lista`)
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tbl_produto`
+-- Dumping data for table `tbl_lista`
 --
 
-LOCK TABLES `tbl_produto` WRITE;
-/*!40000 ALTER TABLE `tbl_produto` DISABLE KEYS */;
-INSERT INTO `tbl_produto` VALUES (1,'Bolacha'),(3,'Bolacha'),(4,'laranja lima'),(5,'kiwi'),(6,'kiwi'),(7,'jaca'),(8,'morango do amor'),(9,'caju'),(10,'goiaba'),(11,'caju'),(12,'atemoia'),(13,'nectarina');
-/*!40000 ALTER TABLE `tbl_produto` ENABLE KEYS */;
+LOCK TABLES `tbl_lista` WRITE;
+/*!40000 ALTER TABLE `tbl_lista` DISABLE KEYS */;
+INSERT INTO `tbl_lista` VALUES (24,'2025-07-28','Lemon Supermercados',125,0),(25,'2025-08-01','Takei Supermercados',775,0),(26,'2025-08-02','Sonda',299,0),(27,'2025-08-05','Atacadao',850,0),(40,'2025-11-12','To Ai Super',325,0),(42,'2025-11-13','Extra Sup',225,0);
+/*!40000 ALTER TABLE `tbl_lista` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-08 20:52:48
+-- Dump completed on 2025-11-13  7:28:12

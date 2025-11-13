@@ -26,7 +26,7 @@ CREATE TABLE `tbl_produto` (
   `id_produto` int NOT NULL AUTO_INCREMENT,
   `nome_produto` varchar(70) NOT NULL,
   PRIMARY KEY (`id_produto`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,7 +35,7 @@ CREATE TABLE `tbl_produto` (
 
 LOCK TABLES `tbl_produto` WRITE;
 /*!40000 ALTER TABLE `tbl_produto` DISABLE KEYS */;
-INSERT INTO `tbl_produto` VALUES (1,'Bolacha'),(4,'laranja lima'),(6,'kiwi'),(7,'jaca'),(8,'morango do amor'),(9,'caju'),(10,'goiaba'),(12,'atemoia'),(13,'nectarina'),(14,'manjericao'),(15,'Salpicao'),(16,'Pimentao'),(17,'Brocolis'),(18,'jubuticaba'),(19,'melão'),(20,'Banana');
+INSERT INTO `tbl_produto` VALUES (1,'Bolacha'),(4,'laranja lima'),(6,'kiwi'),(7,'jaca'),(8,'morango do amor'),(9,'caju'),(10,'goiaba'),(12,'atemoia'),(13,'nectarina'),(14,'manjericao'),(15,'Salpicao'),(16,'Pimentao'),(17,'Brocolis'),(18,'jubuticaba'),(19,'melão'),(20,'Banana'),(21,'Couve'),(22,'Goiabada de tijolinho');
 /*!40000 ALTER TABLE `tbl_produto` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-12  8:30:04
+-- Dump completed on 2025-11-13  7:28:12

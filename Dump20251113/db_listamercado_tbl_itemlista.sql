@@ -34,7 +34,7 @@ CREATE TABLE `tbl_itemlista` (
   KEY `fk_tbl_itemlista_tbl_produto1_idx` (`tbl_produto_id_produto`),
   CONSTRAINT `fk_tbl_itemlista_tbl_lista` FOREIGN KEY (`tbl_lista_id_lista`) REFERENCES `tbl_lista` (`id_lista`),
   CONSTRAINT `fk_tbl_itemlista_tbl_produto1` FOREIGN KEY (`tbl_produto_id_produto`) REFERENCES `tbl_produto` (`id_produto`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `tbl_itemlista` (
 
 LOCK TABLES `tbl_itemlista` WRITE;
 /*!40000 ALTER TABLE `tbl_itemlista` DISABLE KEYS */;
-INSERT INTO `tbl_itemlista` VALUES (3,25.5,135.22,0,24,1),(4,2,5,0,24,1),(5,1,8,0,24,16);
+INSERT INTO `tbl_itemlista` VALUES (4,2,5,0,24,1),(5,1,8,0,24,16),(6,7,15,0,24,13),(7,7,7,1,42,14),(8,2,10,0,42,21),(9,1,5,0,42,22);
 /*!40000 ALTER TABLE `tbl_itemlista` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-12  8:30:04
+-- Dump completed on 2025-11-13  7:28:12
