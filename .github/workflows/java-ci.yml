@@ -27,7 +27,7 @@ jobs:
     - name: Package Application
       run: mvn -B package -DskipTests
       
-    - name: List generated JAR files  # ✅ NOVO STEP
+    - name: List generated JAR files
       run: |
         echo "=== JAR Files Generated ==="
         ls -la target/*.jar
@@ -40,8 +40,19 @@ jobs:
           fi
         done
       
-    - name: Upload JAR
+    - name: Upload JAR to GitHub
       uses: actions/upload-artifact@v4
       with:
         name: lista-mercado-app
         path: target/*.jar
+        
+    - name: Copy JAR to Virtual Machine
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: "192.168.0.7"
+        username: "root"
+        password: ${{ secrets.VM_PASSWORD }}
+        port: 22
+        source: "target/*.jar"
+        target: "/root/listamercado/"
+        overwrite: true
