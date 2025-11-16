@@ -3,6 +3,7 @@ package br.com.isiflix.appmercado;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+// usando java25
 
 // usuaro e senha mysql
 
