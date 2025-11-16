@@ -27,6 +27,19 @@ jobs:
     - name: Package Application
       run: mvn -B package -DskipTests
       
+    - name: List generated JAR files  # ✅ NOVO STEP
+      run: |
+        echo "=== JAR Files Generated ==="
+        ls -la target/*.jar
+        echo "=== Detailed JAR Info ==="
+        for jar in target/*.jar; do
+          if [ -f "$jar" ]; then
+            echo "📦 JAR: $(basename $jar)"
+            echo "   Size: $(du -h $jar | cut -f1)"
+            echo "   Path: $jar"
+          fi
+        done
+      
     - name: Upload JAR
       uses: actions/upload-artifact@v4
       with:
