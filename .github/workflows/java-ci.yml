@@ -1,4 +1,4 @@
-name: Java CI with Maven
+name: Deploy BackEnd ListaMercado
 
 on:
   push:
@@ -12,6 +12,7 @@ jobs:
     name: Build with Java 25
     
     steps:
+    # faz o download do codigo para este container
     - uses: actions/checkout@v4
     
     - name: Set up JDK 25
@@ -23,9 +24,15 @@ jobs:
         
     - name: Build with Maven (Skip Tests)
       run: mvn -B clean compile -DskipTests
+    - name: Listing contents
+      run: ls -la ./target      
       
     - name: Package Application
+      # gera o jar
       run: mvn -B package -DskipTests
+
+
+  
       
     - name: List generated JAR files
       run: |
